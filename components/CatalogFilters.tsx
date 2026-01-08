@@ -85,7 +85,7 @@ export function CatalogFilters({ minFloor, maxFloor, foundCount }: CatalogFilter
           </div>
         </div>
 
-        <div className="w-full col-span-2 lg:col-span-1 lg:w-[250px]">
+        <div className="w-full lg:w-[250px]">
           <label className="text-xs font-medium mb-1.5 block">
             Этаж: {floorMin} - {floorMax}
           </label>
