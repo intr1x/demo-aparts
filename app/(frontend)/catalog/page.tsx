@@ -1,5 +1,8 @@
 import { CatalogClient } from '@/components/CatalogClient'
 import { mockApartments } from '@/lib/mock-data'
+import { Suspense } from 'react'
+
+export const dynamic = 'force-dynamic'
 
 export default async function CatalogPage() {
   // DEMO MODE: Используем моковые данные
@@ -20,7 +23,9 @@ export default async function CatalogPage() {
     <div className="container mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold mb-8">Каталог апартаментов</h1>
       
-      <CatalogClient initialApartments={serializedApartments} />
+      <Suspense fallback={<div>Загрузка...</div>}>
+        <CatalogClient initialApartments={serializedApartments} />
+      </Suspense>
     </div>
   )
 }
