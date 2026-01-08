@@ -30,9 +30,9 @@ export function CatalogFilters({ minFloor, maxFloor, foundCount }: CatalogFilter
   }
 
   return (
-    <div className="space-y-4 lg:space-y-0">
+    <div className="space-y-4">
       {/* Компактная мобильная раскладка */}
-      <div className="grid grid-cols-2 lg:flex lg:items-end gap-3">
+      <div className="grid grid-cols-2 lg:flex lg:items-end gap-3 lg:gap-4">
         <div className="w-full lg:w-[180px]">
           <label className="text-xs font-medium mb-1.5 block">Башня</label>
           <Select value={tower} onValueChange={setTower}>

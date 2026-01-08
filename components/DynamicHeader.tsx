@@ -238,7 +238,7 @@ export function DynamicHeader({ phone, telegram, whatsapp, navItems }: DynamicHe
               <a 
                 href={`tel:${phone}`} 
                 className={cn(
-                  "hidden lg:block text-lg font-medium transition-all duration-300",
+                  "hidden xl:block text-lg font-medium transition-all duration-300",
                   transparent && isDarkBackground && "text-white hover:text-white/80",
                   transparent && !isDarkBackground && "text-gray-900 hover:text-gray-700",
                   !transparent && "hover:text-foreground/80"
