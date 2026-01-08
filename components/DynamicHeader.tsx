@@ -263,7 +263,7 @@ export function DynamicHeader({ phone, telegram, whatsapp, navItems }: DynamicHe
                     !transparent && "text-gray-700 hover:bg-gray-100"
                   )}
                 >
-                  <TelegramIcon className="w-5 h-5" />
+                  <TelegramIcon className="w-6 h-6" />
                 </a>
               )}
               {whatsapp && (
@@ -308,7 +308,7 @@ export function DynamicHeader({ phone, telegram, whatsapp, navItems }: DynamicHe
                     !transparent && "text-gray-700 hover:bg-gray-100"
                   )}
                 >
-                  <TelegramIcon className="w-5 h-5" />
+                  <TelegramIcon className="w-6 h-6" />
                 </a>
               )}
               {whatsapp && (

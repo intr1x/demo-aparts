@@ -31,8 +31,8 @@ export function CatalogFilters({ minFloor, maxFloor, foundCount }: CatalogFilter
 
   return (
     <div className="space-y-4 lg:space-y-0">
-      {/* Оптимизированная мобильная раскладка */}
-      <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] lg:flex lg:items-end gap-4">
+      {/* Компактная мобильная раскладка */}
+      <div className="grid grid-cols-2 lg:flex lg:items-end gap-3">
         <div className="w-full lg:w-[180px]">
           <label className="text-xs font-medium mb-1.5 block">Башня</label>
           <Select value={tower} onValueChange={setTower}>
@@ -62,13 +62,13 @@ export function CatalogFilters({ minFloor, maxFloor, foundCount }: CatalogFilter
           </Select>
         </div>
 
-        <div className="w-full sm:w-auto lg:w-[140px]">
+        <div className="w-full lg:w-[140px]">
           <label className="text-xs font-medium mb-1.5 block">Гостей</label>
           <div className="flex items-center gap-2 h-10">
             <Button
               variant="outline"
               size="sm"
-              className="h-10 w-10 p-0"
+              className="h-10 w-10 p-0 shrink-0"
               onClick={() => setGuests(Math.max(1, guests - 1))}
             >
               −
@@ -77,7 +77,7 @@ export function CatalogFilters({ minFloor, maxFloor, foundCount }: CatalogFilter
             <Button
               variant="outline"
               size="sm"
-              className="h-10 w-10 p-0"
+              className="h-10 w-10 p-0 shrink-0"
               onClick={() => setGuests(guests + 1)}
             >
               +
@@ -85,7 +85,7 @@ export function CatalogFilters({ minFloor, maxFloor, foundCount }: CatalogFilter
           </div>
         </div>
 
-        <div className="w-full sm:col-span-2 lg:w-[250px]">
+        <div className="w-full col-span-2 lg:col-span-1 lg:w-[250px]">
           <label className="text-xs font-medium mb-1.5 block">
             Этаж: {floorMin} - {floorMax}
           </label>
