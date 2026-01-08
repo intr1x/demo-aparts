@@ -1,6 +1,5 @@
-import config from '@/payload.config'
-import { getPayload } from 'payload'
-
+// DEMO MODE: Заглушка для Payload CMS
+// В демо-версии Payload не используется, работаем с моковыми данными
 export const getPayloadClient = async () => {
-  return await getPayload({ config })
+  throw new Error('Payload CMS disabled in demo mode. Use mock data instead.')
 }
