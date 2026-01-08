@@ -10,8 +10,9 @@ export default async function HomePage() {
   const settings = {
     heroTitle: 'Премиальные апартаменты в Москва-Сити',
   }
-  const videoDay = null
-  const videoNight = null
+  // Используем изображения вместо видео для демо
+  const videoDay = '/apartments/apartment-001.jpg'
+  const videoNight = '/apartments/apartment-007.jpg'
 
   return (
     <main>

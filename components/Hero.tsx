@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react'
 import { BookingWidget } from './BookingWidget'
+import Image from 'next/image'
 
 interface HeroProps {
   title?: string
@@ -30,10 +31,13 @@ export function Hero({ title, videoDay, videoNight }: HeroProps) {
     setIsVideoLoaded(true)
   }
 
+  // Определяем, это видео или изображение
+  const isVideo = currentVideo?.endsWith('.mp4') || currentVideo?.endsWith('.webm')
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video or Gradient */}
-      {currentVideo ? (
+      {/* Background - Video or Image */}
+      {currentVideo && isVideo ? (
         <video
           ref={videoRef}
           key={currentVideo}
@@ -53,16 +57,25 @@ export function Hero({ title, videoDay, videoNight }: HeroProps) {
         >
           <source src={currentVideo} type="video/mp4" />
         </video>
+      ) : currentVideo ? (
+        <Image
+          src={currentVideo}
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+          onLoad={() => setIsVideoLoaded(true)}
+        />
       ) : null}
       
-      {/* Fallback gradient (shows while video loads or if no video) */}
+      {/* Fallback gradient (shows while media loads or if no media) */}
       <div 
         className={`absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 transition-opacity duration-1000 ${
           currentVideo && isVideoLoaded ? 'opacity-0' : 'opacity-100'
         }`}
       />
 
-      {/* Loading Spinner - shows while video is loading */}
+      {/* Loading Spinner - shows while media is loading */}
       {currentVideo && !isVideoLoaded && (
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="flex flex-col items-center gap-4">
