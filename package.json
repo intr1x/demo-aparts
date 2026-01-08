@@ -6,13 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "payload": "payload",
-    "generate:types": "payload generate:types",
-    "seed": "npx tsx scripts/seed.ts",
-    "migrate": "node scripts/migrate-apartments.js",
-    "import-real": "npx tsx scripts/import-real-apartments.ts",
-    "rebuild": "npx tsx scripts/rebuild-apartments.ts"
+    "lint": "eslint"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.70.0",
