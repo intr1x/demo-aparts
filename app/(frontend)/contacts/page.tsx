@@ -1,10 +1,13 @@
-import { getPayloadClient } from '@/lib/payload'
 import Image from 'next/image'
 import { Train, Car, CarTaxiFront } from 'lucide-react'
 
 export default async function ContactsPage() {
-  const payload = await getPayloadClient()
-  const settings = await payload.findGlobal({ slug: 'settings' })
+  // DEMO MODE: Статические данные контактов
+  const settings = {
+    phone: '+7 (999) 123-45-67',
+    whatsapp: '79991234567',
+    telegram: 'msc_aparts',
+  }
 
   return (
     <div>
