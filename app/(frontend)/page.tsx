@@ -10,9 +10,9 @@ export default async function HomePage() {
   const settings = {
     heroTitle: 'Премиальные апартаменты в Москва-Сити',
   }
-  // Используем изображения вместо видео для демо
-  const videoDay = '/apartments/apartment-001.jpg'
-  const videoNight = '/apartments/apartment-007.jpg'
+  // Используем видео для Hero блока
+  const videoDay = '/media/13162916_business-center-moscow-city_by_funnybugs_preview.mp4'
+  const videoNight = '/media/3135007_moscow-city-business-center_by_michaelvorobiev_preview.mp4'
 
   return (
     <main>
