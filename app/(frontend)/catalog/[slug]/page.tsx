@@ -5,21 +5,22 @@ import Link from 'next/link'
 import { Reviews } from '@/components/Reviews'
 import { mockApartments } from '@/lib/mock-data'
 
-function extractTextFromLexical(data: Record<string, unknown>): string {
+function extractTextFromLexical(data: unknown): string {
   try {
-    if (!data?.root?.children) return ''
+    const lexicalData = data as { root?: { children?: unknown[] } }
+    if (!lexicalData?.root?.children) return ''
     
     let text = ''
-    const traverse = (node: Record<string, unknown>) => {
+    const traverse = (node: { type?: string; text?: string; children?: unknown[] }) => {
       if (node.type === 'text') {
         text += node.text + ' '
       }
       if (node.children) {
-        node.children.forEach(traverse)
+        node.children.forEach((child) => traverse(child as { type?: string; text?: string; children?: unknown[] }))
       }
     }
     
-    data.root.children.forEach(traverse)
+    lexicalData.root.children.forEach((child) => traverse(child as { type?: string; text?: string; children?: unknown[] }))
     return text.trim()
   } catch {
     return ''

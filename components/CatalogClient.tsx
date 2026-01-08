@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { useQueryState, parseAsString, parseAsInteger } from 'nuqs'
 import { CatalogFilters } from './CatalogFilters'
 import { PropertyCard } from './PropertyCard'
