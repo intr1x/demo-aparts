@@ -3,6 +3,8 @@ import { DynamicHeader } from './DynamicHeader'
 export async function Header() {
   // DEMO MODE: Статические данные
   const phone = '+7 (999) 123-45-67'
+  const telegram = 'https://t.me/yourusername'
+  const whatsapp = 'https://wa.me/79991234567'
 
   const navItems = [
     { href: '/catalog', label: 'Каталог' },
@@ -31,5 +33,5 @@ export async function Header() {
     { href: '/contacts', label: 'Контакты' },
   ]
 
-  return <DynamicHeader phone={phone} navItems={navItems} />
+  return <DynamicHeader phone={phone} telegram={telegram} whatsapp={whatsapp} navItems={navItems} />
 }

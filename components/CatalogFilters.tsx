@@ -31,8 +31,8 @@ export function CatalogFilters({ minFloor, maxFloor, foundCount }: CatalogFilter
 
   return (
     <div className="space-y-4 lg:space-y-0">
-      {/* Мобильная и планшетная версия - вертикальная раскладка */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:items-end gap-4">
+      {/* Оптимизированная мобильная раскладка */}
+      <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] lg:flex lg:items-end gap-4">
         <div className="w-full lg:w-[180px]">
           <label className="text-xs font-medium mb-1.5 block">Башня</label>
           <Select value={tower} onValueChange={setTower}>
@@ -85,7 +85,7 @@ export function CatalogFilters({ minFloor, maxFloor, foundCount }: CatalogFilter
           </div>
         </div>
 
-        <div className="w-full lg:w-[250px]">
+        <div className="w-full sm:col-span-2 lg:w-[250px]">
           <label className="text-xs font-medium mb-1.5 block">
             Этаж: {floorMin} - {floorMax}
           </label>
