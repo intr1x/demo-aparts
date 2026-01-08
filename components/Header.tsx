@@ -1,9 +1,8 @@
-import { getPayloadClient } from '@/lib/payload'
 import { DynamicHeader } from './DynamicHeader'
 
 export async function Header() {
-  const payload = await getPayloadClient()
-  const settings = await payload.findGlobal({ slug: 'settings' })
+  // DEMO MODE: Статические данные
+  const phone = '+7 (999) 123-45-67'
 
   const navItems = [
     { href: '/catalog', label: 'Каталог' },
@@ -32,5 +31,5 @@ export async function Header() {
     { href: '/contacts', label: 'Контакты' },
   ]
 
-  return <DynamicHeader phone={settings.phone} navItems={navItems} />
+  return <DynamicHeader phone={phone} navItems={navItems} />
 }
